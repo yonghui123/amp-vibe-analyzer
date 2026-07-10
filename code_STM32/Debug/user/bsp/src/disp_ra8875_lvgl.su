@@ -1,0 +1,16 @@
+../user/bsp/src/disp_ra8875_lvgl.c:57:13:touch_map_coords	24	static
+../user/bsp/src/disp_ra8875_lvgl.c:69:13:touch_filter_apply	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:88:13:touch_calib_reset_accumulator	4	static
+../user/bsp/src/disp_ra8875_lvgl.c:96:13:touch_calib_accumulate	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:103:13:touch_calib_finalize_sample	4	static
+../user/bsp/src/disp_ra8875_lvgl.c:124:13:touch_poll_hardware	24	static
+../user/bsp/src/disp_ra8875_lvgl.c:178:13:ra8875_flush_cb	40	static
+../user/bsp/src/disp_ra8875_lvgl.c:195:13:ra8875_touch_read_cb	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:216:13:disp_ra8875_init	8	static
+../user/bsp/src/disp_ra8875_lvgl.c:232:13:touch_ra8875_init	8	static
+../user/bsp/src/disp_ra8875_lvgl.c:243:6:DISP_RA8875_LVGL_Init	8	static
+../user/bsp/src/disp_ra8875_lvgl.c:252:6:DISP_SetTouchCalibCollectMode	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:262:6:DISP_ResetTouchState	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:289:6:DISP_TakeCalibSample	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:306:6:DISP_GetLastTouchRaw	16	static
+../user/bsp/src/disp_ra8875_lvgl.c:316:6:DISP_GetTouchPoint	24	static

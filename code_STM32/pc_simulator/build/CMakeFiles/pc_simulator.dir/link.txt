@@ -1,0 +1,3 @@
+D:\cMake\bin\cmake.exe -E rm -f CMakeFiles\pc_simulator.dir/objects.a
+D:\workoffice\MinGW\bin\ar.exe qc CMakeFiles\pc_simulator.dir/objects.a @CMakeFiles\pc_simulator.dir\objects1.rsp
+D:\workoffice\MinGW\bin\gcc.exe -mconsole -Wl,--whole-archive CMakeFiles\pc_simulator.dir/objects.a -Wl,--no-whole-archive -o pc_simulator.exe -Wl,--out-implib,libpc_simulator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pc_simulator.dir\linkLibs.rsp

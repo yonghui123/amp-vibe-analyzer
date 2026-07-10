@@ -1,0 +1,4 @@
+../user/app/src/touch_bsp_test.c:23:13:touch_bsp_draw_header	192	static
+../user/app/src/touch_bsp_test.c:57:13:touch_bsp_draw_static_frame	64	static
+../user/app/src/touch_bsp_test.c:75:13:touch_bsp_update_live	112	static
+../user/app/src/touch_bsp_test.c:87:6:TouchBspTest_Run	40	static

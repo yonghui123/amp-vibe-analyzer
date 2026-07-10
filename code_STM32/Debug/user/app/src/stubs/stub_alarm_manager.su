@@ -1,0 +1,8 @@
+../user/app/src/stubs/stub_alarm_manager.c:15:6:Alarm_Init	4	static
+../user/app/src/stubs/stub_alarm_manager.c:23:6:Alarm_CheckGeneral	24	static
+../user/app/src/stubs/stub_alarm_manager.c:32:6:Alarm_CheckVibration	24	static
+../user/app/src/stubs/stub_alarm_manager.c:45:7:Alarm_CalcOverLimitRatio	24	static
+../user/app/src/stubs/stub_alarm_manager.c:56:16:Alarm_GetStatus	4	static
+../user/app/src/stubs/stub_alarm_manager.c:61:6:Alarm_Reset	4	static
+../user/app/src/stubs/stub_alarm_manager.c:68:6:Alarm_SetBuzzer	16	static
+../user/app/src/stubs/stub_alarm_manager.c:73:6:Alarm_CreateRecord	32	static

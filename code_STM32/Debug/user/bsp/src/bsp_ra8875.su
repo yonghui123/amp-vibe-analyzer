@@ -1,0 +1,10 @@
+../user/bsp/src/bsp_ra8875.c:18:9:RA8875_ReadBusy	8	static
+../user/bsp/src/bsp_ra8875.c:34:6:RA8875_Delaly1us	16	static
+../user/bsp/src/bsp_ra8875.c:48:6:RA8875_Delaly1ms	8	static
+../user/bsp/src/bsp_ra8875.c:61:6:RA8875_WriteCmd	16	static
+../user/bsp/src/bsp_ra8875.c:74:6:RA8875_WriteData	16	static
+../user/bsp/src/bsp_ra8875.c:87:9:RA8875_ReadData	4	static
+../user/bsp/src/bsp_ra8875.c:100:6:RA8875_WriteData16	16	static
+../user/bsp/src/bsp_ra8875.c:114:10:RA8875_ReadData16	4	static
+../user/bsp/src/bsp_ra8875.c:127:9:RA8875_ReadStatus	4	static
+../user/bsp/src/bsp_ra8875.c:140:10:RA8875_GetDispMemAddr	4	static

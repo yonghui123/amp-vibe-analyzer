@@ -1,0 +1,17 @@
+../user/bsp/src/bsp_ad7606.c:33:13:adc_store_snapshot	24	static
+../user/bsp/src/bsp_ad7606.c:41:6:bsp_InitAD7606	16	static
+../user/bsp/src/bsp_ad7606.c:55:6:AD7606_SetOS	16	static
+../user/bsp/src/bsp_ad7606.c:97:6:AD7606_SetInputRange	16	static
+../user/bsp/src/bsp_ad7606.c:106:6:AD7606_Reset	8	static
+../user/bsp/src/bsp_ad7606.c:114:6:AD7606_StartConvst	4	static
+../user/bsp/src/bsp_ad7606.c:119:6:AD7606_ReadNowAdc	40	static,ignoring_inline_asm
+../user/bsp/src/bsp_ad7606.c:139:17:ad7606_clamp_sample_hz	16	static
+../user/bsp/src/bsp_ad7606.c:152:6:AD7606_EnterAutoMode	48	static
+../user/bsp/src/bsp_ad7606.c:190:6:AD7606_StartRecord	24	static
+../user/bsp/src/bsp_ad7606.c:205:6:AD7606_StopRecord	8	static
+../user/bsp/src/bsp_ad7606.c:212:6:AD7606_GetLatestRaw	40	static,ignoring_inline_asm
+../user/bsp/src/bsp_ad7606.c:229:10:AD7606_GetSampleCount	4	static
+../user/bsp/src/bsp_ad7606.c:234:6:AD7606_IsRecording	4	static
+../user/bsp/src/bsp_ad7606.c:239:10:AD7606_GetSampleHz	4	static
+../user/bsp/src/bsp_ad7606.c:247:28:AD7606_SampleHook	16	static
+../user/bsp/src/bsp_ad7606.c:252:6:HAL_GPIO_EXTI_Callback	16	static

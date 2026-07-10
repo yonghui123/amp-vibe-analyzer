@@ -1,0 +1,9 @@
+../user/app/src/acq_task.c:90:13:acq_task_push_gui	32	static
+../user/app/src/acq_task.c:114:13:acq_task_process_once	48	static
+../user/app/src/acq_task.c:131:13:AcqTask_Entry	16	static
+../user/app/src/acq_task.c:150:6:AcqTask_Init	8	static
+../user/app/src/acq_task.c:183:6:Acq_Start	8	static
+../user/app/src/acq_task.c:206:6:Acq_Stop	8	static
+../user/app/src/acq_task.c:223:6:Acq_IsRunning	4	static
+../user/app/src/acq_task.c:231:10:Acq_GetFrameCount	4	static
+../user/app/src/acq_task.c:239:10:Acq_GetFrameFailCount	4	static

@@ -1,0 +1,2 @@
+../user/app/src/param.c:32:6:LoadParam	8	static
+../user/app/src/param.c:61:6:SaveParam	4	static

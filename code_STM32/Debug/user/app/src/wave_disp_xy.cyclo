@@ -1,0 +1,10 @@
+../user/app/src/wave_disp_xy.c:71:6:DispFrameXY	5
+../user/app/src/wave_disp_xy.c:105:6:DispRuleXY	3
+../user/app/src/wave_disp_xy.c:138:16:YAdcToPixel	1
+../user/app/src/wave_disp_xy.c:155:16:XAdcToPixel	1
+../user/app/src/wave_disp_xy.c:172:13:DispXYWave	8
+../user/app/src/wave_disp_xy.c:257:13:DispXYWaveAdd	7
+../user/app/src/wave_disp_xy.c:309:6:DispDsoXY	1
+../user/app/src/wave_disp_xy.c:317:6:DispFileXY_0	1
+../user/app/src/wave_disp_xy.c:324:6:DispFileXY_1	1
+../user/app/src/wave_disp_xy.c:331:6:DispClearWinXY	1

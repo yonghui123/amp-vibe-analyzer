@@ -1,0 +1,2 @@
+../Core/Src/freertos.c:148:13:gui_run_lvgl_app	8	static
+../Core/Src/freertos.c:174:6:StartGUITask	24	static

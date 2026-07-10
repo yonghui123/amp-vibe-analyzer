@@ -1,0 +1,20 @@
+# GDB init for STM32F407 + OpenOCD
+# Used by debug.ps1
+
+set pagination off
+set confirm off
+
+target extended-remote 127.0.0.1:5000
+monitor reset halt
+load
+
+# Key breakpoints for red-screen investigation
+break main
+break StartGUITask
+break GUI_Init
+break HardFault_Handler
+
+echo \n=== Loaded. Type 'continue' or 'c' to run ===\n
+echo === Useful: next(n) step(s) print var bt info threads ===\n
+
+continue

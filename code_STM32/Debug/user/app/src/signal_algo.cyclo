@@ -1,0 +1,17 @@
+../user/app/src/signal_algo.c:19:7:SignalAlgo_Calibrate	1
+../user/app/src/signal_algo.c:26:10:SignalAlgo_MovingAverageWinSize	1
+../user/app/src/signal_algo.c:32:6:SignalAlgo_MovingAverageInPlace	9
+../user/app/src/signal_algo.c:58:6:SignalAlgo_BandpassDesign	8
+../user/app/src/signal_algo.c:96:6:SignalAlgo_BiquadReset	2
+../user/app/src/signal_algo.c:103:7:SignalAlgo_BiquadStep	3
+../user/app/src/signal_algo.c:124:6:SignalAlgo_BandpassInPlace	6
+../user/app/src/signal_algo.c:137:6:SignalAlgo_ApplyVibFilter	9
+../user/app/src/signal_algo.c:171:7:SignalAlgo_PeakPeak	6
+../user/app/src/signal_algo.c:192:10:SignalAlgo_PeakPeakWindowed	11
+../user/app/src/signal_algo.c:229:10:SignalAlgo_CycleSampleCount	1
+../user/app/src/signal_algo.c:235:10:SignalAlgo_SubWindowSampleCount	3
+../user/app/src/signal_algo.c:251:7:SignalAlgo_MapVibPpToChartY	5
+../user/app/src/signal_algo.c:275:6:SignalAlgo_EnvelopeFromBaseline	7
+../user/app/src/signal_algo.c:295:7:SignalAlgo_LinearInterp	5
+../user/app/src/signal_algo.c:313:6:SignalAlgo_EnvelopeAtChartIdx	7
+../user/app/src/signal_algo.c:338:7:SignalAlgo_OverLimitRatio	8

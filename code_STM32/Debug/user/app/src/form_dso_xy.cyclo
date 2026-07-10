@@ -1,0 +1,8 @@
+../user/app/src/form_dso_xy.c:334:6:NewAdcToDispBufXY	1
+../user/app/src/form_dso_xy.c:676:13:InitFormXY	1
+../user/app/src/form_dso_xy.c:833:13:DispT1T2	1
+../user/app/src/form_dso_xy.c:854:13:DispProgress	1
+../user/app/src/form_dso_xy.c:872:13:DispAvgVolt	1
+../user/app/src/form_dso_xy.c:904:13:DispAvgCurr	1
+../user/app/src/form_dso_xy.c:937:13:DispPower	1
+../user/app/src/form_dso_xy.c:954:13:DispFormXY	1

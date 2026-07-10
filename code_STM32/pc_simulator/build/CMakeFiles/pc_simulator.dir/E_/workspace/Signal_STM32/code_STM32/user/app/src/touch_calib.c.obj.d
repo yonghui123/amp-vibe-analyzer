@@ -1,0 +1,23 @@
+CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/code_STM32/user/app/src/touch_calib.c.obj: \
+ E:\workspace\Signal_STM32\code_STM32\user\app\src\touch_calib.c \
+ e:\workspace\signal_stm32\code_stm32\user\app\inlcude\touch_calib.h \
+ d:\workoffice\mingw\lib\gcc\x86_64-w64-mingw32\11.2.0\include\stdint.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\stdint.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\crtdefs.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\corecrt.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\_mingw.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\_mingw_mac.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\_mingw_secapi.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\vadefs.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
+ d:\workoffice\mingw\lib\gcc\x86_64-w64-mingw32\11.2.0\include\stddef.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\stddef.h \
+ d:\workoffice\mingw\lib\gcc\x86_64-w64-mingw32\11.2.0\include\stdbool.h \
+ e:\workspace\signal_stm32\code_stm32\user\app\inlcude\config.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\stdio.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\_mingw_off_t.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\swprintf.inl \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\sec_api\stdio_s.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\string.h \
+ d:\workoffice\mingw\x86_64-w64-mingw32\include\sec_api\string_s.h

@@ -1,0 +1,9 @@
+../user/app/src/stubs/stub_data_logger.c:9:6:DataLogger_Init	4	static
+../user/app/src/stubs/stub_data_logger.c:14:6:DataLogger_SavePoint	16	static
+../user/app/src/stubs/stub_data_logger.c:20:10:DataLogger_SavePointsBulk	16	static
+../user/app/src/stubs/stub_data_logger.c:26:10:DataLogger_QueryHistory	24	static
+../user/app/src/stubs/stub_data_logger.c:38:6:DataLogger_SaveAlarm	16	static
+../user/app/src/stubs/stub_data_logger.c:44:10:DataLogger_QueryAlarms	24	static
+../user/app/src/stubs/stub_data_logger.c:56:6:DataLogger_ExportCSV	24	static
+../user/app/src/stubs/stub_data_logger.c:67:6:DataLogger_Cleanup	16	static
+../user/app/src/stubs/stub_data_logger.c:72:10:DataLogger_GetAlarmCount	4	static

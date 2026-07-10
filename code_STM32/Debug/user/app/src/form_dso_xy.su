@@ -1,0 +1,8 @@
+../user/app/src/form_dso_xy.c:334:6:NewAdcToDispBufXY	4	static
+../user/app/src/form_dso_xy.c:676:13:InitFormXY	4	static
+../user/app/src/form_dso_xy.c:833:13:DispT1T2	40	static
+../user/app/src/form_dso_xy.c:854:13:DispProgress	48	static
+../user/app/src/form_dso_xy.c:872:13:DispAvgVolt	56	static
+../user/app/src/form_dso_xy.c:904:13:DispAvgCurr	56	static
+../user/app/src/form_dso_xy.c:937:13:DispPower	48	static
+../user/app/src/form_dso_xy.c:954:13:DispFormXY	8	static

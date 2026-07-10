@@ -1,0 +1,6 @@
+../user/app/src/touch_bsp_calib.c:45:13:calib_draw_cross	1
+../user/app/src/touch_bsp_calib.c:63:13:calib_show_status	2
+../user/app/src/touch_bsp_calib.c:79:13:calib_adc_distinct	3
+../user/app/src/touch_bsp_calib.c:111:13:calib_show_done	3
+../user/app/src/touch_bsp_calib.c:133:6:TouchBspCalib_Do	5
+../user/app/src/touch_bsp_calib.c:257:6:TouchBspCalib_Run	1

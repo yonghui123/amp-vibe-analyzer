@@ -1,0 +1,17 @@
+../user/app/src/alarm_manager.c:80:13:alarm_debounce_tick	24	static
+../user/app/src/alarm_manager.c:104:20:alarm_merge_type	16	static
+../user/app/src/alarm_manager.c:118:23:alarm_merge_status	16	static
+../user/app/src/alarm_manager.c:129:13:alarm_get_general_value	32	static
+../user/app/src/alarm_manager.c:158:6:Alarm_CheckGeneral	24	static
+../user/app/src/alarm_manager.c:164:6:Alarm_CheckVibration	32	static
+../user/app/src/alarm_manager.c:179:7:Alarm_CalcOverLimitRatio	24	static
+../user/app/src/alarm_manager.c:189:13:alarm_process_general	72	static
+../user/app/src/alarm_manager.c:240:13:alarm_process_vibration	56	static
+../user/app/src/alarm_manager.c:341:13:alarm_notify_gui	24	static
+../user/app/src/alarm_manager.c:377:6:Alarm_Init	8	static
+../user/app/src/alarm_manager.c:391:6:Alarm_NotifyConfigChanged	16	static
+../user/app/src/alarm_manager.c:410:6:Alarm_ProcessFrame	88	static
+../user/app/src/alarm_manager.c:444:16:Alarm_GetStatus	4	static
+../user/app/src/alarm_manager.c:449:6:Alarm_Reset	8	static
+../user/app/src/alarm_manager.c:455:6:Alarm_SetBuzzer	16	static
+../user/app/src/alarm_manager.c:460:6:Alarm_CreateRecord	32	static

@@ -1,0 +1,6 @@
+../Middlewares/Third_Party/LVGL/src/hal/../draw/../misc/lv_color.h:599:26:lv_color_hex	24	static
+../Middlewares/Third_Party/LVGL/src/core/lv_obj_style.h:205:20:lv_obj_set_style_pad_all	24	static
+../Middlewares/Third_Party/LVGL/src/core/lv_obj_style.h:225:20:lv_obj_set_style_pad_gap	24	static
+../user/app/src/gui/gui_widgets.c:18:6:GUI_LegendBoxCfgInit	16	static
+../user/app/src/gui/gui_widgets.c:31:11:GUI_CreateLegendBox	72	static
+../user/app/src/gui/gui_widgets.c:94:6:GUI_FormatFloat	56	static

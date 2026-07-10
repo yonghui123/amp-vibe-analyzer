@@ -1,0 +1,8 @@
+../user/app/src/stubs/stub_fatfs.c:12:9:f_open	1
+../user/app/src/stubs/stub_fatfs.c:20:9:f_close	1
+../user/app/src/stubs/stub_fatfs.c:26:7:f_gets	2
+../user/app/src/stubs/stub_fatfs.c:34:9:f_read	2
+../user/app/src/stubs/stub_fatfs.c:43:9:f_write	2
+../user/app/src/stubs/stub_fatfs.c:52:9:f_opendir	1
+../user/app/src/stubs/stub_fatfs.c:59:9:f_readdir	2
+../user/app/src/stubs/stub_fatfs.c:68:9:f_closedir	1

@@ -1,0 +1,6 @@
+../user/app/src/touch_bsp_calib.c:45:13:calib_draw_cross	40	static
+../user/app/src/touch_bsp_calib.c:63:13:calib_show_status	16	static
+../user/app/src/touch_bsp_calib.c:79:13:calib_adc_distinct	40	static
+../user/app/src/touch_bsp_calib.c:111:13:calib_show_done	16	static
+../user/app/src/touch_bsp_calib.c:133:6:TouchBspCalib_Do	160	static
+../user/app/src/touch_bsp_calib.c:257:6:TouchBspCalib_Run	8	static

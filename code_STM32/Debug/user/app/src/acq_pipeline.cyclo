@@ -1,0 +1,16 @@
+../user/app/src/acq_pipeline.c:130:13:vib_ring_push	3
+../user/app/src/acq_pipeline.c:155:17:vib_ring_drain_window	6
+../user/app/src/acq_pipeline.c:193:14:pipeline_calibrate_one	3
+../user/app/src/acq_pipeline.c:207:14:pipeline_get_vib_sample_hz	3
+../user/app/src/acq_pipeline.c:222:13:pipeline_read_raw	2
+../user/app/src/acq_pipeline.c:297:13:pipeline_calibrate	2
+../user/app/src/acq_pipeline.c:306:7:AcqPipeline_CalcPeakPeak	1
+../user/app/src/acq_pipeline.c:318:13:pipeline_fill_general	3
+../user/app/src/acq_pipeline.c:345:13:pipeline_fill_vibration_pp	6
+../user/app/src/acq_pipeline.c:403:6:AcqPipeline_Init	2
+../user/app/src/acq_pipeline.c:415:6:AcqPipeline_ResetVibCapture	1
+../user/app/src/acq_pipeline.c:433:6:AcqPipeline_SetVibCaptureEnabled	2
+../user/app/src/acq_pipeline.c:451:6:AcqPipeline_RebuildRoute	14
+../user/app/src/acq_pipeline.c:500:6:AcqPipeline_OnAd7606Sample	5
+../user/app/src/acq_pipeline.c:516:6:AD7606_SampleHook	1
+../user/app/src/acq_pipeline.c:532:6:AcqPipeline_ProcessFrame	4

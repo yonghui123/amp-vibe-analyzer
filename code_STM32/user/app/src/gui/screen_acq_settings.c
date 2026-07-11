@@ -15,16 +15,12 @@
 #include "config_store.h"
 #include "channel_data.h"
 #include "acq_pipeline.h"
+#include "storage/path_layout.h"
+#include "storage/envelope_csv.h"
+#include "storage/sd_fs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-/* 平台头文件: STM32 用 FatFs, PC模拟器用 dirent */
-#if defined(PC_SIMULATOR)
-  #include <dirent.h>
-#else
-  #include "ff.h"       /* FatFs - SD 卡文件系统 */
-#endif
 
 /* ==================== Layout constants ==================== */
 #define ACQ_LEFT_W          460
@@ -69,12 +65,8 @@ static lv_obj_t     *g_fp_list        = NULL;   /* 文件列表 (lv_list) */
 static lv_group_t   *g_fp_group       = NULL;   /* 弹窗专用焦点组 */
 static lv_group_t   *g_fp_main_group  = NULL;   /* 保存的主焦点组 */
 
-/* 包络线文件扫描目录 (STM32: SD卡路径, PC: 当前目录下的 Envelope 文件夹) */
-#if defined(PC_SIMULATOR)
-  #define ENVELOPE_DIR  "Envelope"
-#else
-  #define ENVELOPE_DIR  "/Envelope"
-#endif
+/* 包络线目录（相对路径，无盘符） */
+#define ENVELOPE_DIR  PATH_DIR_ENVELOPE
 
 /* 最大文件数 (防止列表过长) */
 #define FP_MAX_FILES    32
@@ -350,73 +342,42 @@ static void acq_btn_apply_cb(lv_event_t *e)
 /* ==================== 文件选择器弹窗 ==================== */
 
 /**
- * @brief  扫描目录中的 .csv 文件，填充到 lv_list
- *
- * 平台隔离:
- *   - STM32: 使用 FatFs (f_opendir / f_readdir) 扫描 SD 卡目录
- *   - PC模拟器: 使用 dirent.h 扫描本地目录，目录不存在时提供 mock 文件
+ * @brief  扫描 Envelope/ 下 .csv，填充 lv_list（经 envelope_csv / sd_fs）
  */
+typedef struct {
+    lv_obj_t *list;
+    uint8_t   count;
+} fp_list_ctx_t;
+
+static bool fp_list_add_cb(const char *filename, void *user)
+{
+    fp_list_ctx_t *ctx = (fp_list_ctx_t *)user;
+    lv_obj_t *btn;
+    if (ctx == NULL || filename == NULL || ctx->count >= FP_MAX_FILES) {
+        return false;
+    }
+    btn = lv_list_add_btn(ctx->list, LV_SYMBOL_FILE, filename);
+    lv_obj_set_style_text_font(btn, &lv_font_montserrat_12, 0);
+    ctx->count++;
+    return true;
+}
+
 static void fp_scan_files(lv_obj_t *list)
 {
+    fp_list_ctx_t ctx;
+
     lv_list_add_text(list, "  " ENVELOPE_DIR);
+    ctx.list = list;
+    ctx.count = 0;
 
-#if defined(PC_SIMULATOR)
-    /* ---------- PC 模拟器: 用 dirent 扫描本地目录 ---------- */
-    DIR *dir = opendir(ENVELOPE_DIR);
-    if (dir) {
-        struct dirent *entry;
-        uint8_t count = 0;
-        while ((entry = readdir(dir)) != NULL && count < FP_MAX_FILES) {
-            /* 过滤: 只要 .csv 文件 */
-            const char *name = entry->d_name;
-            size_t len = strlen(name);
-            if (len > 4 && strcmp(name + len - 4, ".csv") == 0) {
-                lv_obj_t *btn = lv_list_add_btn(list, LV_SYMBOL_FILE, name);
-                lv_obj_set_style_text_font(btn, &lv_font_montserrat_12, 0);
-                count++;
-            }
-        }
-        closedir(dir);
-        if (count == 0) {
-            lv_list_add_text(list, "  (no .csv files found)");
-        }
-    } else {
-        /* 目录不存在时提供 mock 文件，方便测试 */
-        lv_obj_t *b1 = lv_list_add_btn(list, LV_SYMBOL_FILE, "envelope_sample1.csv");
-        lv_obj_t *b2 = lv_list_add_btn(list, LV_SYMBOL_FILE, "envelope_sample2.csv");
-        lv_obj_t *b3 = lv_list_add_btn(list, LV_SYMBOL_FILE, "motor_baseline.csv");
-        lv_obj_set_style_text_font(b1, &lv_font_montserrat_12, 0);
-        lv_obj_set_style_text_font(b2, &lv_font_montserrat_12, 0);
-        lv_obj_set_style_text_font(b3, &lv_font_montserrat_12, 0);
+    if (!SdFs_IsReady()) {
+        lv_list_add_text(list, "  (SD not ready)");
+        return;
     }
-#else
-    /* ---------- STM32: 用 FatFs 扫描 SD 卡目录 ---------- */
-    DIR fatfs_dir;
-    FILINFO fno;
-    FRESULT res = f_opendir(&fatfs_dir, ENVELOPE_DIR);
-    if (res == FR_OK) {
-        uint8_t count = 0;
-        while (count < FP_MAX_FILES) {
-            res = f_readdir(&fatfs_dir, &fno);
-            if (res != FR_OK || fno.fname[0] == '\0') break;  /* 目录结束 */
 
-            /* 过滤: 只要 .csv 文件 (忽略目录和隐藏文件) */
-            size_t len = strlen(fno.fname);
-            if (len > 4 && strcmp(fno.fname + len - 4, ".csv") == 0
-                && !(fno.fattrib & AM_DIR)) {
-                lv_obj_t *btn = lv_list_add_btn(list, LV_SYMBOL_FILE, fno.fname);
-                lv_obj_set_style_text_font(btn, &lv_font_montserrat_12, 0);
-                count++;
-            }
-        }
-        f_closedir(&fatfs_dir);
-        if (count == 0) {
-            lv_list_add_text(list, "  (no .csv files found)");
-        }
-    } else {
-        lv_list_add_text(list, "  (SD card not available)");
+    if (!EnvelopeCsv_List(fp_list_add_cb, &ctx) || ctx.count == 0U) {
+        lv_list_add_text(list, "  (no .csv files found)");
     }
-#endif
 }
 
 /**

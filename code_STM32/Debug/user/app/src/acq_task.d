@@ -1,7 +1,9 @@
 user/app/src/acq_task.o: ../user/app/src/acq_task.c \
  ../user/app/inlcude/acq_task.h ../user/app/inlcude/acq_pipeline.h \
  ../user/app/inlcude/config.h ../user/app/inlcude/gui/gui_core.h \
- ../user/app/inlcude/config.h \
+ ../user/app/inlcude/config.h ../user/app/inlcude/config_store.h \
+ ../user/app/inlcude/channel_data.h ../user/app/inlcude/config_store.h \
+ ../user/app/inlcude/data_logger.h ../user/app/inlcude/alarm_manager.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -41,6 +43,8 @@ user/app/src/acq_task.o: ../user/app/src/acq_task.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ../user/app/inlcude/acq_task.h:
@@ -48,6 +52,11 @@ user/app/src/acq_task.o: ../user/app/src/acq_task.c \
 ../user/app/inlcude/config.h:
 ../user/app/inlcude/gui/gui_core.h:
 ../user/app/inlcude/config.h:
+../user/app/inlcude/config_store.h:
+../user/app/inlcude/channel_data.h:
+../user/app/inlcude/config_store.h:
+../user/app/inlcude/data_logger.h:
+../user/app/inlcude/alarm_manager.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -87,5 +96,7 @@ user/app/src/acq_task.o: ../user/app/src/acq_task.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:

@@ -1,0 +1,2 @@
+id,timestamp,type,channel_num,channel_name,current,threshold,over_duration_s,duration_s,process_status,notes
+1,1783759039,1,0,Current_C,55.0000,50.0000,0.000,0.000,Open,

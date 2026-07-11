@@ -1,1 +1,1 @@
-  -L"E:/workspace/Signal_STM32/code_STM32/pc_simulator/SDL2/SDL2-2.30.3/x86_64-w64-mingw32/lib"  -lmingw32 -lSDL2main -lSDL2 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -L"E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/pc_simulator/SDL2/SDL2-2.30.3/x86_64-w64-mingw32/lib"  -lmingw32 -lSDL2main -lSDL2 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

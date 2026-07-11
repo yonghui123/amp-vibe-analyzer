@@ -1,2 +1,2 @@
-../Core/Src/freertos.c:148:13:gui_run_lvgl_app	1
-../Core/Src/freertos.c:174:6:StartGUITask	3
+../Core/Src/freertos.c:150:13:gui_run_lvgl_app	1
+../Core/Src/freertos.c:176:6:StartGUITask	3

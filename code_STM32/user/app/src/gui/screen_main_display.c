@@ -32,17 +32,17 @@
 #include "channel_data.h"
 #include "alarm_manager.h"
 #include "acq_task.h"
+#include "config_store.h"
 #include "signal_algo.h"
+#include "storage/envelope_csv.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
-/* 平台头文件: STM32 用 FatFs 读取包络线 CSV 文件 */
 #if defined(PC_SIMULATOR)
   #include <time.h>
 #else
-  #include "ff.h"
   #include "stm32f4xx_hal.h"
 #endif
 
@@ -722,43 +722,14 @@ static bool vib_load_envelope_file(const char *path,
                                     uint8_t upper_pct, uint8_t lower_pct)
 {
     float baseline[VIB_ENV_MAX_PTS];
-    uint16_t n = 0u;
+    uint16_t n;
 
     s_env_point_count = 0u;
-    if (path == NULL || path[0] == '\0') return false;
-
-#if defined(PC_SIMULATOR)
-    FILE *fp = fopen(path, "r");
-    if (!fp) return false;
-
-    char line[64];
-    while (fgets(line, sizeof(line), fp) != NULL && n < VIB_ENV_MAX_PTS) {
-        if (line[0] == '#' || line[0] == '\n' || line[0] == '\r') continue;
-
-        float x_val = 0.0f, y_val = 0.0f;
-        if (sscanf(line, "%f,%f", &x_val, &y_val) == 2 && y_val >= 0.0f) {
-            baseline[n++] = y_val;
-        }
+    if (path == NULL || path[0] == '\0') {
+        return false;
     }
-    fclose(fp);
 
-#else   /* STM32: FatFs */
-    FIL   fil;
-    FRESULT res = f_open(&fil, path, FA_READ);
-    if (res != FR_OK) return false;
-
-    char line[64];
-    while (f_gets(line, sizeof(line), &fil) != NULL && n < VIB_ENV_MAX_PTS) {
-        if (line[0] == '#' || line[0] == '\n' || line[0] == '\r') continue;
-
-        float x_val = 0.0f, y_val = 0.0f;
-        if (sscanf(line, "%f,%f", &x_val, &y_val) == 2 && y_val >= 0.0f) {
-            baseline[n++] = y_val;
-        }
-    }
-    f_close(&fil);
-#endif
-
+    n = EnvelopeCsv_LoadBaseline(path, baseline, VIB_ENV_MAX_PTS);
     if (n < 2u) {
         return false;
     }

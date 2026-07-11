@@ -12,6 +12,7 @@ RM := rm -rf
 -include user/fonts/subdir.mk
 -include user/bsp/src/subdir.mk
 -include user/app/src/stubs/subdir.mk
+-include user/app/src/storage/subdir.mk
 -include user/app/src/lvgl_wrappers/subdir.mk
 -include user/app/src/gui/subdir.mk
 -include user/app/src/subdir.mk
@@ -19,6 +20,10 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
+-include Middlewares/Third_Party/FatFs/src/option/subdir.mk
+-include Middlewares/Third_Party/FatFs/src/subdir.mk
+-include FATFS/Target/subdir.mk
+-include FATFS/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -70,8 +75,8 @@ all: main-build
 main-build: code.elf secondary-outputs
 
 # Tool invocations
-code.elf code.map: $(OBJS) $(USER_OBJS) E:\workspace\Signal_STM32\code_STM32\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "code.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\workspace\Signal_STM32\code_STM32\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="code.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+code.elf code.map: $(OBJS) $(USER_OBJS) E:\workspace\Signal_STM32\amp-vibe-analyzer\code_STM32\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "code.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\workspace\Signal_STM32\amp-vibe-analyzer\code_STM32\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="code.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

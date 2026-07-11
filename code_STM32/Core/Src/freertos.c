@@ -76,6 +76,8 @@
 
 #endif
 
+#include "storage/sd_fs.h"
+
 /* USER CODE END Includes */
 
 
@@ -202,6 +204,12 @@ void StartGUITask(void *argument)
   }
 
 #endif
+
+
+
+  /* SD 工具层：无卡时返回 false，不阻塞 GUI */
+
+  (void)SdFs_Init();
 
 
 

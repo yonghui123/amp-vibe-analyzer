@@ -15,6 +15,10 @@
 #include "acq_pipeline.h"
 #include "gui_core.h"
 #include "config.h"
+#include "config_store.h"
+#include "channel_data.h"
+#include "data_logger.h"
+#include <string.h>
 
 #if defined(PC_SIMULATOR)
 #include "lvgl.h"
@@ -118,6 +122,24 @@ static void acq_task_process_once(void)
     if (AcqPipeline_ProcessFrame(&frame)) {
         s_frame_count++;
         acq_task_push_gui(&frame);
+
+        /* 低频落盘：每帧写振动 PP / 首路通用值（缓冲由 DataLogger 刷盘） */
+        {
+            DataPoint_t dp;
+            AcqParams_t ap = Config_LoadAcqParams();
+            memset(&dp, 0, sizeof(dp));
+            dp.timestamp = s_frame_count; /* 会话内相对序号；绝对时间由 logger 可再扩展 */
+            if (frame.vib_valid) {
+                dp.channel_num = ap.vibration_ch_num;
+                dp.signal_value = frame.vib_pp;
+                dp.peak_to_peak = frame.vib_pp;
+                (void)DataLogger_SavePoint(&dp);
+            } else if (frame.general_count > 0U) {
+                dp.channel_num = ap.general_ch_num;
+                dp.signal_value = frame.general_vals[0];
+                (void)DataLogger_SavePoint(&dp);
+            }
+        }
     } else {
         s_frame_fail_count++;
     }
@@ -182,6 +204,9 @@ void AcqTask_Init(void)
  */
 void Acq_Start(void)
 {
+    ChannelConfig_t *ch;
+    AcqParams_t ap;
+
     if (s_acq_running) {
         return;
     }
@@ -190,6 +215,11 @@ void Acq_Start(void)
     AcqPipeline_ResetVibCapture();
     AcqPipeline_SetVibCaptureEnabled(true);
     GUI_ResetMainCharts();
+
+    ap = Config_LoadAcqParams();
+    ch = ChannelData_GetById(ap.vibration_ch_num);
+    (void)DataLogger_BeginSession(ap.vibration_ch_num,
+                                   (ch != NULL) ? ch->channel_name : "acq");
 
 #if !defined(PC_SIMULATOR)
     AD7606_StartRecord(ACQ_DEFAULT_ADC_HZ);
@@ -211,6 +241,7 @@ void Acq_Stop(void)
 
     s_acq_running = false;
     AcqPipeline_SetVibCaptureEnabled(false);
+    DataLogger_EndSession();
 
 #if !defined(PC_SIMULATOR)
     AD7606_StopRecord();

@@ -1,4 +1,4 @@
-# Install script for directory: E:/workspace/Signal_STM32/code_STM32/pc_simulator
+# Install script for directory: E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/pc_simulator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/workspace/Signal_STM32/code_STM32/pc_simulator/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/pc_simulator/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

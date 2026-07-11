@@ -228,7 +228,9 @@ user/app/src/gui/gui_core.o: ../user/app/src/gui/gui_core.c \
  ../Middlewares/Third_Party/LVGL/src/misc/lv_async.h \
  ../user/app/inlcude/gui/gui_core.h ../user/app/inlcude/channel_data.h \
  ../user/app/inlcude/config_store.h ../user/app/inlcude/config.h \
- ../user/app/inlcude/acq_task.h ../user/app/inlcude/touch_bsp_touch.h \
+ ../user/app/inlcude/acq_task.h ../user/app/inlcude/data_logger.h \
+ ../user/app/inlcude/alarm_manager.h \
+ ../user/app/inlcude/touch_bsp_touch.h \
  ../user/bsp/include/disp_ra8875_lvgl.h
 ../user/app/inlcude/config.h:
 ../Middlewares/Third_Party/LVGL/lvgl.h:
@@ -463,5 +465,7 @@ user/app/src/gui/gui_core.o: ../user/app/src/gui/gui_core.c \
 ../user/app/inlcude/config_store.h:
 ../user/app/inlcude/config.h:
 ../user/app/inlcude/acq_task.h:
+../user/app/inlcude/data_logger.h:
+../user/app/inlcude/alarm_manager.h:
 ../user/app/inlcude/touch_bsp_touch.h:
 ../user/bsp/include/disp_ra8875_lvgl.h:

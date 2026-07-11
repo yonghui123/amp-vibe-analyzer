@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "min_cycle_duration_s": 10,
+  "vibration_ch_id": 5,
+  "general_ch_id": 1,
+  "filter_mode": 1,
+  "rpm": 1500,
+  "cycle_multiplier": 20,
+  "moving_average": 10,
+  "general_threshold": 0.0000,
+  "threshold_time_s": 1.0000,
+  "alarm_threshold_pct": 80,
+  "envelope_upper_pct": 20,
+  "envelope_lower_pct": 20,
+  "envelope_file_path": "Envelope/envelope_test.csv"
+}

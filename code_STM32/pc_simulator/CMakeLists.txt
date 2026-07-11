@@ -53,12 +53,17 @@ set(SHARED_SOURCES
     ${USER_DIR}/app/src/acq_pipeline.c
     ${USER_DIR}/app/src/acq_task.c
     ${USER_DIR}/app/src/alarm_manager.c
+    ${USER_DIR}/app/src/config_store.c
+    ${USER_DIR}/app/src/data_logger.c
+    ${USER_DIR}/app/src/storage/sd_fs.c
+    ${USER_DIR}/app/src/storage/path_layout.c
+    ${USER_DIR}/app/src/storage/json_kv.c
+    ${USER_DIR}/app/src/storage/config_codec.c
+    ${USER_DIR}/app/src/storage/envelope_csv.c
 )
 
-# 桩模块源文件
+# 桩模块（AD7606 等硬件桩；config/data_logger 已实装）
 set(STUB_SOURCES
-    ${USER_DIR}/app/src/stubs/stub_config_store.c
-    ${USER_DIR}/app/src/stubs/stub_data_logger.c
 )
 
 # 主程序

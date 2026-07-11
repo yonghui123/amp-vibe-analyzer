@@ -18,6 +18,7 @@
 #include "gui_core.h"
 #include "channel_data.h"
 #include "acq_task.h"
+#include "data_logger.h"
 #include <string.h>
 #if !defined(PC_SIMULATOR)
 #include "touch_bsp_touch.h"
@@ -437,6 +438,8 @@ void GUI_Init(void)
 
     /* 初始化共享通道数据 (加载 JSON 或使用默认值) */
     ChannelData_Init();
+    DataLogger_Init();
+    (void)DataLogger_Cleanup(30U);
 
     /* 初始化采集任务与管线（校准路由、报警占位） */
     AcqTask_Init();

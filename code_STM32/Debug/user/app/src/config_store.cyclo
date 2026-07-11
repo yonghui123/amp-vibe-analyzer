@@ -1,0 +1,14 @@
+../user/app/src/config_store.c:27:13:fill_default_channels	4
+../user/app/src/config_store.c:55:13:fill_default_acq	1
+../user/app/src/config_store.c:76:13:load_channels_file	4
+../user/app/src/config_store.c:99:13:save_channels_file	3
+../user/app/src/config_store.c:116:13:load_acq_file	3
+../user/app/src/config_store.c:132:13:save_acq_file	3
+../user/app/src/config_store.c:149:6:Config_Init	4
+../user/app/src/config_store.c:178:9:Config_LoadChannels	4
+../user/app/src/config_store.c:192:6:Config_SaveChannels	5
+../user/app/src/config_store.c:205:13:Config_LoadAcqParams	3
+../user/app/src/config_store.c:213:6:Config_SaveAcqParams	4
+../user/app/src/config_store.c:225:6:Config_RestoreDefaults	1
+../user/app/src/config_store.c:234:6:Config_GetDefaultChannels	3
+../user/app/src/config_store.c:242:6:Config_GetDefaultAcqParams	2

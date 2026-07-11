@@ -12,6 +12,7 @@
 #include "gui_calib.h"
 #include "config.h"
 #include "acq_task.h"
+#include "storage/sd_fs.h"
 
 /* 显示分辨率 */
 #define DISP_HOR_RES 800
@@ -228,6 +229,12 @@ int main(int argc, char **argv)
         &lv_font_montserrat_14
     );
     lv_disp_set_theme(lv_disp_get_default(), th);
+
+    /* ===== SD 工具层（PC：./sd_root） ===== */
+    if (!SdFs_Init()) {
+        printf("SdFs_Init failed (err=%d), storage APIs unavailable\n",
+               SdFs_LastError());
+    }
 
     /* ===== 启动 GUI 界面 ===== */
 #if GUI_TOUCH_CALIB_MODE

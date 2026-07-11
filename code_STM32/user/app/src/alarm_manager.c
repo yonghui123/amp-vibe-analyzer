@@ -14,6 +14,7 @@
 #include "channel_data.h"
 #include "config_store.h"
 #include "gui_core.h"
+#include "data_logger.h"
 #include <string.h>
 
 /* ==================== 常量 ==================== */
@@ -354,22 +355,34 @@ static void alarm_notify_gui(bool popup_edge)
         return;
     }
 
-    if (type == ALARM_TYPE_DUAL) {
-        GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_DUAL, "Dual Alarm",
-                           s_last_gen_alarm_val, s_last_gen_alarm_thresh);
-        return;
+    {
+        AlarmRecord_t rec;
+        if (type == ALARM_TYPE_DUAL) {
+            Alarm_CreateRecord(&rec, ALARM_TYPE_DUAL, 0U, "Dual Alarm",
+                               s_last_gen_alarm_val, s_last_gen_alarm_thresh);
+            (void)DataLogger_SaveAlarm(&rec);
+            GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_DUAL, "Dual Alarm",
+                               s_last_gen_alarm_val, s_last_gen_alarm_thresh);
+            return;
+        }
+        if (type == ALARM_TYPE_GENERAL) {
+            Alarm_CreateRecord(&rec, ALARM_TYPE_GENERAL, 0U,
+                               s_last_gen_alarm_name,
+                               s_last_gen_alarm_val, s_last_gen_alarm_thresh);
+            (void)DataLogger_SaveAlarm(&rec);
+            GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_GENERAL,
+                               s_last_gen_alarm_name,
+                               s_last_gen_alarm_val, s_last_gen_alarm_thresh);
+            return;
+        }
+        Alarm_CreateRecord(&rec, ALARM_TYPE_VIBRATION, 0U,
+                           s_last_vib_alarm_name,
+                           s_last_vib_alarm_val, s_last_vib_alarm_thresh);
+        (void)DataLogger_SaveAlarm(&rec);
+        GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_VIBRATION,
+                           s_last_vib_alarm_name,
+                           s_last_vib_alarm_val, s_last_vib_alarm_thresh);
     }
-
-    if (type == ALARM_TYPE_GENERAL) {
-        GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_GENERAL,
-                           s_last_gen_alarm_name,
-                           s_last_gen_alarm_val, s_last_gen_alarm_thresh);
-        return;
-    }
-
-    GUI_PostAlarmPopup((uint8_t)ALARM_TYPE_VIBRATION,
-                       s_last_vib_alarm_name,
-                       s_last_vib_alarm_val, s_last_vib_alarm_thresh);
 }
 
 /* ==================== 对外 API ==================== */

@@ -35,6 +35,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
@@ -269,7 +271,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../user/bsp/include/disp_ra8875_lvgl.h \
  ../user/bsp/include/bsp_lcd_ra8875.h ../user/bsp/include/bsp_tft_lcd.h \
  ../user/bsp/include/bsp_font.h ../user/app/inlcude/touch_bsp_calib.h \
- ../user/app/inlcude/touch_bsp_test.h ../user/app/inlcude/touch_calib.h
+ ../user/app/inlcude/touch_bsp_test.h ../user/app/inlcude/touch_calib.h \
+ ../user/app/inlcude/storage/sd_fs.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -307,6 +310,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
@@ -547,3 +552,4 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../user/app/inlcude/touch_bsp_calib.h:
 ../user/app/inlcude/touch_bsp_test.h:
 ../user/app/inlcude/touch_calib.h:
+../user/app/inlcude/storage/sd_fs.h:

@@ -25,6 +25,10 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
+FATFS/App \
+FATFS/Target \
+Middlewares/Third_Party/FatFs/src \
+Middlewares/Third_Party/FatFs/src/option \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
@@ -32,6 +36,7 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 user/app/src \
 user/app/src/gui \
 user/app/src/lvgl_wrappers \
+user/app/src/storage \
 user/app/src/stubs \
 user/bsp/src \
 user/fonts \

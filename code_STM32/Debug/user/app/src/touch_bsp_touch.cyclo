@@ -1,9 +1,9 @@
 ../user/app/src/touch_bsp_touch.c:41:6:TouchBsp_PenDown	1
 ../user/app/src/touch_bsp_touch.c:51:13:touch_adc_valid	5
-../user/app/src/touch_bsp_touch.c:75:6:TouchBsp_TryReadAdc	7
-../user/app/src/touch_bsp_touch.c:137:17:touch_median_trimmed	5
-../user/app/src/touch_bsp_touch.c:164:6:TouchBsp_WaitPenRelease	4
-../user/app/src/touch_bsp_touch.c:206:6:TouchBsp_CaptureCalibAdc	7
-../user/app/src/touch_bsp_touch.c:284:6:TouchBsp_WaitReleaseAdcSample	1
-../user/app/src/touch_bsp_touch.c:296:6:TouchBsp_ReadAdcFiltered	7
-../user/app/src/touch_bsp_touch.c:362:6:TouchBsp_AdcToScreen	4
+../user/app/src/touch_bsp_touch.c:75:6:TouchBsp_TryReadAdc	8
+../user/app/src/touch_bsp_touch.c:142:17:touch_median_trimmed	5
+../user/app/src/touch_bsp_touch.c:169:6:TouchBsp_WaitPenRelease	4
+../user/app/src/touch_bsp_touch.c:211:6:TouchBsp_CaptureCalibAdc	7
+../user/app/src/touch_bsp_touch.c:289:6:TouchBsp_WaitReleaseAdcSample	1
+../user/app/src/touch_bsp_touch.c:301:6:TouchBsp_ReadAdcFiltered	7
+../user/app/src/touch_bsp_touch.c:367:6:TouchBsp_AdcToScreen	4

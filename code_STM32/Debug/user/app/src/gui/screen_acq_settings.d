@@ -230,7 +230,9 @@ user/app/src/gui/screen_acq_settings.o: \
  ../user/app/inlcude/config.h ../user/app/inlcude/config_store.h \
  ../user/app/inlcude/config.h ../user/app/inlcude/channel_data.h \
  ../user/app/inlcude/config_store.h ../user/app/inlcude/acq_pipeline.h \
- ../user/bsp/include/ff.h
+ ../user/app/inlcude/storage/path_layout.h \
+ ../user/app/inlcude/storage/envelope_csv.h \
+ ../user/app/inlcude/storage/sd_fs.h
 ../Middlewares/Third_Party/LVGL/lvgl.h:
 ../Middlewares/Third_Party/LVGL/src/misc/lv_log.h:
 ../Middlewares/Third_Party/LVGL/src/misc/../lv_conf_internal.h:
@@ -465,4 +467,6 @@ user/app/src/gui/screen_acq_settings.o: \
 ../user/app/inlcude/channel_data.h:
 ../user/app/inlcude/config_store.h:
 ../user/app/inlcude/acq_pipeline.h:
-../user/bsp/include/ff.h:
+../user/app/inlcude/storage/path_layout.h:
+../user/app/inlcude/storage/envelope_csv.h:
+../user/app/inlcude/storage/sd_fs.h:

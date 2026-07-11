@@ -26,9 +26,23 @@ if (-not (Test-Path $BuildDir)) {
     New-Item -ItemType Directory -Path $BuildDir | Out-Null
 }
 
-# CMake 配置（仅在需要时）
+# CMake 配置（仅在需要时；若缓存来自其它路径则强制重建）
 $CacheFile = Join-Path $BuildDir "CMakeCache.txt"
-if (-not (Test-Path $CacheFile)) {
+$NeedConfigure = -not (Test-Path $CacheFile)
+if ((Test-Path $CacheFile)) {
+    $cacheText = Get-Content $CacheFile -Raw -ErrorAction SilentlyContinue
+    $expected = ($PSScriptRoot -replace '\\', '/').ToLowerInvariant()
+    if ($cacheText -notmatch [regex]::Escape($expected) -and
+        $cacheText -notmatch [regex]::Escape(($PSScriptRoot -replace '\\', '\\').ToLowerInvariant())) {
+        # 典型错误：从 code_STM32 拷来的 build，CMAKE 仍指向旧目录
+        Write-Host "CMake cache path mismatch — cleaning build..." -ForegroundColor Yellow
+        Remove-Item -Recurse -Force $BuildDir
+        New-Item -ItemType Directory -Path $BuildDir | Out-Null
+        $NeedConfigure = $true
+    }
+}
+
+if ($NeedConfigure) {
     Write-Host "Configuring CMake..." -ForegroundColor Cyan
     Push-Location $BuildDir
     cmake .. -G "MinGW Makefiles"

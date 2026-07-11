@@ -1,0 +1,4 @@
+../user/app/src/storage/config_codec.c:10:5:ConfigCodec_ChannelsToJson	128	static
+../user/app/src/storage/config_codec.c:69:6:ConfigCodec_ChannelsFromJson	72	static
+../user/app/src/storage/config_codec.c:141:5:ConfigCodec_AcqToJson	128	static
+../user/app/src/storage/config_codec.c:178:6:ConfigCodec_AcqFromJson	16	static

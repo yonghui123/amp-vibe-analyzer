@@ -22,8 +22,8 @@
 ../user/app/src/gui/screen_alarm_records.c:528:13:alm_table_click_cb	8
 ../user/app/src/gui/screen_alarm_records.c:547:13:alm_btn_view_curve_cb	5
 ../user/app/src/gui/screen_alarm_records.c:566:13:alm_btn_export_csv_cb	2
-../user/app/src/gui/screen_alarm_records.c:576:13:alm_btn_save_notes_cb	5
-../user/app/src/gui/screen_alarm_records.c:600:6:gui_alarm_records_refresh_list	1
-../user/app/src/gui/screen_alarm_records.c:608:18:alm_make_date_field	1
-../user/app/src/gui/screen_alarm_records.c:634:6:gui_alarm_records_create	2
-../user/app/src/gui/screen_alarm_records.c:1061:6:gui_alarm_records_destroy	3
+../user/app/src/gui/screen_alarm_records.c:576:13:alm_btn_save_notes_cb	6
+../user/app/src/gui/screen_alarm_records.c:604:6:gui_alarm_records_refresh_list	1
+../user/app/src/gui/screen_alarm_records.c:612:18:alm_make_date_field	1
+../user/app/src/gui/screen_alarm_records.c:638:6:gui_alarm_records_create	2
+../user/app/src/gui/screen_alarm_records.c:1065:6:gui_alarm_records_destroy	3

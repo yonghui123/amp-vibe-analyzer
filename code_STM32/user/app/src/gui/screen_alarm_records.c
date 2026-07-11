@@ -592,7 +592,11 @@ static void alm_btn_save_notes_cb(lv_event_t *e)
         r->notes[sizeof(r->notes) - 1] = '\0';
     }
     alm_refresh_table();
-    GUI_Toast("Notes saved", 1500);
+    if (DataLogger_UpdateAlarm(r)) {
+        GUI_Toast("Notes saved", 1500);
+    } else {
+        GUI_Toast("Notes save failed (SD?)", 2000);
+    }
 }
 
 /* ==================== Public refresh ==================== */

@@ -1,0 +1,5 @@
+../user/app/src/storage/json_kv.c:9:13:JsonKv_Find	13
+../user/app/src/storage/json_kv.c:35:5:JsonKv_GetInt	2
+../user/app/src/storage/json_kv.c:41:7:JsonKv_GetFloat	2
+../user/app/src/storage/json_kv.c:47:6:JsonKv_GetBool	5
+../user/app/src/storage/json_kv.c:56:6:JsonKv_GetString	8

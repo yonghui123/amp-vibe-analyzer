@@ -147,7 +147,6 @@ static float     s_env_norm_scale  = 1.0f;        /* 包络归一化系数（映
 static void status_bar_time_timer_cb(lv_timer_t *timer);
 static void status_bar_blink_timer_cb(lv_timer_t *timer);
 static void status_click_cb(lv_event_t *e);
-static void alarm_popup_close_cb(lv_event_t *e);
 static void chart_draw_event_cb(lv_event_t *e);
 static void main_btn_start_stop_cb(lv_event_t *e);
 static void main_btn_clear_cb(lv_event_t *e);
@@ -382,23 +381,12 @@ static void status_click_cb(lv_event_t *e)
                     s_alarm_level);
     }
 
-    /* 创建模态弹窗 */
+    /* 简易弹窗（不用 lv_msgbox，板端触摸可关） */
     static const char *btns[] = {"OK", ""};
-    lv_obj_t *mbox = lv_msgbox_create(NULL, "Alarm Status", msg_buf, btns, false);
-    lv_obj_set_width(mbox, 320);
-    lv_obj_center(mbox);
-
-    /* 注册关闭回调 */
-    lv_obj_add_event_cb(mbox, alarm_popup_close_cb, LV_EVENT_VALUE_CHANGED, NULL);
-}
-
-/**
- * @brief  报警弹窗关闭回调
- */
-static void alarm_popup_close_cb(lv_event_t *e)
-{
-    lv_obj_t *mbox = lv_event_get_current_target(e);
-    lv_msgbox_close(mbox);
+    lv_obj_t *dlg = GUI_DialogCreate("Alarm Status", msg_buf, btns, NULL, NULL);
+    if (dlg != NULL) {
+        GUI_DialogSetWidth(dlg, 320);
+    }
 }
 
 /* ==================== 图表绘制事件回调 ==================== */

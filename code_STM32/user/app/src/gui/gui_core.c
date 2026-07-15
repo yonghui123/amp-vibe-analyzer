@@ -16,6 +16,7 @@
 #include "lvgl.h"
 #include "misc/lv_async.h"
 #include "gui_core.h"
+#include "gui_widgets.h"
 #include "channel_data.h"
 #include "acq_task.h"
 #include "data_logger.h"
@@ -414,12 +415,18 @@ static void toast_timer_cb(lv_timer_t *timer)
     (void)timer;
 }
 
-/* ==================== Alarm popup close callback ==================== */
+/* ==================== Alarm popup（GUI_Dialog，避免板端 msgbox 关不掉） ==================== */
 
-static void alarm_popup_close_cb(lv_event_t *e)
+static lv_obj_t *g_alarm_dialog = NULL;
+
+static void alarm_popup_btn_cb(lv_obj_t *dialog, uint16_t btn_idx, void *user_data)
 {
-    lv_obj_t *mbox = lv_event_get_current_target(e);
-    lv_msgbox_close(mbox);
+    (void)btn_idx;
+    (void)user_data;
+    if (g_alarm_dialog == dialog) {
+        g_alarm_dialog = NULL;
+    }
+    GUI_DialogClose(dialog);
 }
 
 /* ==================== Public API ==================== */
@@ -959,18 +966,23 @@ void GUI_ShowAlarmPopup(uint8_t alarm_type, const char *channel_name,
                     msg_buf);
     }
 
-    /* Create modal message box */
+    /* 单例：避免报警连发叠多层挡死触摸 */
+    if (g_alarm_dialog != NULL) {
+        GUI_DialogClose(g_alarm_dialog);
+        g_alarm_dialog = NULL;
+    }
+
     static const char *btns[] = {"Confirm", ""};
-    lv_obj_t *mbox = lv_msgbox_create(NULL, "ALARM!", msg_buf, btns, false);
-    lv_obj_set_width(mbox, 280);
-    lv_obj_center(mbox);
+    g_alarm_dialog = GUI_DialogCreate("ALARM!", msg_buf, btns, alarm_popup_btn_cb, NULL);
+    if (g_alarm_dialog == NULL) {
+        return;
+    }
+    GUI_DialogSetWidth(g_alarm_dialog, 280);
 
-    /* Set alarm colors */
-    lv_obj_t *title = lv_msgbox_get_title(mbox);
-    lv_obj_set_style_text_color(title, lv_palette_main(LV_PALETTE_RED), 0);
-
-    /* Register close callback */
-    lv_obj_add_event_cb(mbox, alarm_popup_close_cb, LV_EVENT_VALUE_CHANGED, NULL);
+    lv_obj_t *title = GUI_DialogGetTitle(g_alarm_dialog);
+    if (title != NULL) {
+        lv_obj_set_style_text_color(title, lv_palette_main(LV_PALETTE_RED), 0);
+    }
 }
 
 

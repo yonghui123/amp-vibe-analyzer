@@ -225,7 +225,8 @@ user/app/src/gui/gui_widgets.o: ../user/app/src/gui/gui_widgets.c \
  ../Middlewares/Third_Party/LVGL/src/extra/widgets/imgbtn/lv_imgbtn.h \
  ../Middlewares/Third_Party/LVGL/src/extra/widgets/imgbtn/../../../lvgl.h \
  ../Middlewares/Third_Party/LVGL/src/extra/widgets/span/lv_span.h \
- ../Middlewares/Third_Party/LVGL/src/extra/widgets/span/../../../lvgl.h
+ ../Middlewares/Third_Party/LVGL/src/extra/widgets/span/../../../lvgl.h \
+ ../user/app/inlcude/config.h
 ../user/app/inlcude/gui/gui_widgets.h:
 ../Middlewares/Third_Party/LVGL/lvgl.h:
 ../Middlewares/Third_Party/LVGL/src/misc/lv_log.h:
@@ -453,3 +454,4 @@ user/app/src/gui/gui_widgets.o: ../user/app/src/gui/gui_widgets.c \
 ../Middlewares/Third_Party/LVGL/src/extra/widgets/imgbtn/../../../lvgl.h:
 ../Middlewares/Third_Party/LVGL/src/extra/widgets/span/lv_span.h:
 ../Middlewares/Third_Party/LVGL/src/extra/widgets/span/../../../lvgl.h:
+../user/app/inlcude/config.h:

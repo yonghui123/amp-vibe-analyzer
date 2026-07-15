@@ -253,4 +253,5 @@ CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM
  e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\middlewares\third_party\lvgl\src/extra/widgets/imgbtn/lv_imgbtn.h \
  e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\middlewares\third_party\lvgl\src\lvgl.h \
  e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\middlewares\third_party\lvgl\src/extra/widgets/span/lv_span.h \
- e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\middlewares\third_party\lvgl\src\lvgl.h
+ e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\middlewares\third_party\lvgl\src\lvgl.h \
+ e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\user\app\inlcude\config.h

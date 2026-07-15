@@ -214,12 +214,12 @@ static void ch_popup_edit_name(uint16_t row)
 }
 
 /* ---- Type editor (dropdown list popup) ---- */
-static void ch_type_close_cb(lv_event_t *e)
+static void ch_type_close_cb(lv_obj_t *dialog, uint16_t btn_idx, void *user_data)
 {
+    (void)btn_idx;
+    (void)user_data;
     ch_popup_pre_close();
-    lv_obj_t *btnmatrix = lv_event_get_target(e);
-    lv_obj_t *mbox = lv_obj_get_parent(btnmatrix);
-    if (mbox != NULL) lv_msgbox_close(mbox);
+    GUI_DialogClose(dialog);
     ch_popup_post_close();
 }
 
@@ -259,33 +259,29 @@ static void ch_popup_edit_type(uint16_t row)
     ch_popup_enter();
 
     static const char *btns[] = {"Close", ""};
-    lv_obj_t *mbox = lv_msgbox_create(NULL, "Select Type", "", btns, false);
-    lv_obj_set_width(mbox, 220);
+    lv_obj_t *dlg = GUI_DialogCreate("Select Type", NULL, btns, ch_type_close_cb, NULL);
+    if (dlg == NULL) {
+        ch_popup_pre_close();
+        ch_popup_post_close();
+        return;
+    }
+    GUI_DialogSetWidth(dlg, 220);
 
-    lv_obj_t *content = lv_msgbox_get_content(mbox);
-    lv_obj_set_flex_flow(content, LV_FLEX_FLOW_COLUMN);
-    lv_obj_set_style_pad_all(content, 12, 0);
-
+    lv_obj_t *content = GUI_DialogGetContent(dlg);
     lv_obj_t *dd = lv_dropdown_create(content);
     lv_dropdown_set_options(dd, "General\nVibration");
     lv_dropdown_set_selected(dd, g_ch_configs[row].ch_type);
     lv_obj_set_width(dd, LV_PCT(100));
-    lv_obj_center(mbox);
-
     lv_obj_add_event_cb(dd, ch_type_popup_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
-
-    /* Close button on msgbox */
-    lv_obj_t *btn_close = lv_msgbox_get_btns(mbox);
-    lv_obj_add_event_cb(btn_close, ch_type_close_cb, LV_EVENT_CLICKED, NULL);
 }
 
 /* ---- Unit editor (dropdown list popup, context-sensitive) ---- */
-static void ch_unit_close_cb(lv_event_t *e)
+static void ch_unit_close_cb(lv_obj_t *dialog, uint16_t btn_idx, void *user_data)
 {
+    (void)btn_idx;
+    (void)user_data;
     ch_popup_pre_close();
-    lv_obj_t *btnmatrix = lv_event_get_target(e);
-    lv_obj_t *mbox = lv_obj_get_parent(btnmatrix);
-    if (mbox != NULL) lv_msgbox_close(mbox);
+    GUI_DialogClose(dialog);
     ch_popup_post_close();
 }
 
@@ -316,25 +312,21 @@ static void ch_popup_edit_unit(uint16_t row)
     }
 
     static const char *btns[] = {"Close", ""};
-    lv_obj_t *mbox = lv_msgbox_create(NULL, "Select Unit", "", btns, false);
-    lv_obj_set_width(mbox, 220);
+    lv_obj_t *dlg = GUI_DialogCreate("Select Unit", NULL, btns, ch_unit_close_cb, NULL);
+    if (dlg == NULL) {
+        ch_popup_pre_close();
+        ch_popup_post_close();
+        return;
+    }
+    GUI_DialogSetWidth(dlg, 220);
 
-    lv_obj_t *content = lv_msgbox_get_content(mbox);
-    lv_obj_set_flex_flow(content, LV_FLEX_FLOW_COLUMN);
-    lv_obj_set_style_pad_all(content, 12, 0);
-
+    lv_obj_t *content = GUI_DialogGetContent(dlg);
     lv_obj_t *dd = lv_dropdown_create(content);
     lv_dropdown_set_options(dd, options);
     /* 使用当前已保存的单位索引 */
     lv_dropdown_set_selected(dd, g_ch_configs[row].unit_index);
     lv_obj_set_width(dd, LV_PCT(100));
-    lv_obj_center(mbox);
-
     lv_obj_add_event_cb(dd, ch_unit_popup_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
-
-    /* Close button on msgbox */
-    lv_obj_t *btn_close = lv_msgbox_get_btns(mbox);
-    lv_obj_add_event_cb(btn_close, ch_unit_close_cb, LV_EVENT_CLICKED, NULL);
 }
 
 /* ---- Spinbox editor (number popup, overlay structure) ---- */

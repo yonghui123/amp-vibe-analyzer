@@ -18912,7 +18912,8 @@ CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/config.h \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/config_store.h \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/data_logger.h \
-  E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/gui/gui_core.h
+  E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/gui/gui_core.h \
+  E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/gui/gui_widgets.h
 
 CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/src/gui/gui_widgets.c.obj: E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/src/gui/gui_widgets.c \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/pc_simulator/lv_conf.h \
@@ -19083,6 +19084,7 @@ CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/Middlewares/Third_Party/LVGL/src/widgets/lv_btnmatrix.h \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/Middlewares/Third_Party/LVGL/src/widgets/lv_img.h \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/Middlewares/Third_Party/LVGL/src/widgets/lv_label.h \
+  E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/config.h \
   E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/inlcude/gui/gui_widgets.h
 
 CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/src/gui/screen_acq_settings.c.obj: E:/workspace/Signal_STM32/amp-vibe-analyzer/code_STM32/user/app/src/gui/screen_acq_settings.c \

@@ -203,8 +203,8 @@ static void calib_show_done_ui(bool saved)
 
     lv_obj_t *hint = lv_label_create(g_panel);
     lv_label_set_text(hint,
-                       saved ? "Affine params saved to Flash automatically."
-                             : "Flash write failed. Set GUI_TOUCH_CALIB_MODE=1 and retry.");
+                       saved ? "Calibration saved to SD (Config/touch_calib.bin)."
+                             : "SD save failed. Check SD card then retry.");
     lv_obj_set_width(hint, LV_PCT(80));
     lv_label_set_long_mode(hint, LV_LABEL_LONG_WRAP);
     lv_obj_set_style_text_align(hint, LV_TEXT_ALIGN_CENTER, 0);
@@ -234,7 +234,7 @@ static void calib_verify_save_btn_cb(lv_event_t *e)
 #if !defined(PC_SIMULATOR)
     saved = TouchCalib_Save();
 #else
-    saved = true;
+    saved = TouchCalib_Save(); /* PC：写入 sd_root/Config/touch_calib.bin */
 #endif
     calib_show_done_ui(saved);
 }

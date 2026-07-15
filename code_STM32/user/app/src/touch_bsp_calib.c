@@ -118,9 +118,9 @@ static void calib_show_done(bool saved)
 
     LCD_DispStr(5, 70,
 
-                saved ? "Params saved to Flash."
+                saved ? "Params saved to SD card."
 
-                      : "Flash write failed; test uses RAM.",
+                      : "SD save failed; test uses RAM.",
 
                 &s_font);
 

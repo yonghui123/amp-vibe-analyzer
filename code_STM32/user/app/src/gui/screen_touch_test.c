@@ -127,8 +127,11 @@ static void touch_test_update_calib_status(void)
 
 #if !defined(PC_SIMULATOR)
     switch (TouchCalib_GetSource()) {
+    case TOUCH_CALIB_SRC_SD:
+        lv_label_set_text(g_label_status, "Calib: SD");
+        break;
     case TOUCH_CALIB_SRC_FLASH:
-        lv_label_set_text(g_label_status, "Calib: Flash");
+        lv_label_set_text(g_label_status, "Calib: Flash (legacy)");
         break;
     case TOUCH_CALIB_SRC_V5_PARAM:
         lv_label_set_text(g_label_status, "Calib: v5 factory");

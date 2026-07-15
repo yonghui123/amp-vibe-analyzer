@@ -14,6 +14,8 @@ CMakeFiles/pc_simulator.dir/E_/workspace/Signal_STM32/amp-vibe-analyzer/code_STM
  d:\workoffice\mingw\x86_64-w64-mingw32\include\stddef.h \
  d:\workoffice\mingw\lib\gcc\x86_64-w64-mingw32\11.2.0\include\stdbool.h \
  e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\user\app\inlcude\config.h \
+ e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\user\app\inlcude\storage\sd_fs.h \
+ e:\workspace\signal_stm32\amp-vibe-analyzer\code_stm32\user\app\inlcude\storage\path_layout.h \
  d:\workoffice\mingw\x86_64-w64-mingw32\include\stdio.h \
  d:\workoffice\mingw\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
  d:\workoffice\mingw\x86_64-w64-mingw32\include\_mingw_off_t.h \

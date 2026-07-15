@@ -24,6 +24,7 @@ extern "C" {
 /* 常用配置文件 */
 #define PATH_FILE_CHANNEL_CONFIG  "Config/channel_config.json"
 #define PATH_FILE_ACQ_SETTINGS    "Config/acq_settings.json"
+#define PATH_FILE_TOUCH_CALIB     "Config/touch_calib.bin"
 
 /**
  * @brief  确保 PRD 约定的一级目录存在
